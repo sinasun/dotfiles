@@ -1,0 +1,15 @@
+delay=1
+region=3
+action=1
+show_mouse=0
+title=ArcoLinux
+timestamp=TRUE
+app=feh
+custom_action_command=none
+last_user=
+last_extension=png
+enable_imgur_upload=true
+show_in_folder=false
+screenshot_dir=file:/home/sinasun/Downloads
+show_border=1
+

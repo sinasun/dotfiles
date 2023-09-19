@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+#####################################
+#                                   #
+#  @author      : 00xWolf           #
+#    GitHub    : @mmsaeed509       #
+#    Developer : Mahmoud Mohamed   #
+#  﫥  Copyright : Exodia OS         #
+#                                   #
+#####################################
+
+# Directories #
+DIR="$HOME/.config/bspwm"
+BSP="$HOME/.config/bspwm/themes"
+ROFI_THEME="rofi -theme $DIR/rofi/themes/themes.rasi"
+EXODIA_CONFIG_FILE="${DIR}/exodia.conf"
+
+# get No. themes #
+NUM_OF_THEMES=$(cd ${DIR}/themes && ls -d */ | cut -d '/' -f1 | wc -l)
+sed -i "s/str:.*/str: \" [${NUM_OF_THEMES}] Bspwm Themes Are Available In Exodia OS \\\n   Have fun with your favorite theme \";/" ${DIR}/rofi/themes/themes.rasi
+
+# Get available themes #
+AVAILABLE_THEMES=$(ls "$BSP")
+
+# Pass available themes to rofi #
+SELECTED_THEME=$(echo -e "${AVAILABLE_THEMES}" | ${ROFI_THEME} -dmenu -selected-row 0)
+
+# Apply the chosen theme #
+if [[ -n $SELECTED_THEME ]];
+
+	then
+
+    	THEME_PATH="$BSP/$SELECTED_THEME"
+
+    	if [[ -d "$THEME_PATH" ]];
+		
+			then
+
+				sed -i "s/exodiaTheme = .*/exodiaTheme = ${SELECTED_THEME}/" ${EXODIA_CONFIG_FILE}
+				bash "${THEME_PATH}/apply-theme"
+
+    	else
+
+    	    bash "${DIR}/rofi/bin/error"
+
+    	fi
+
+fi

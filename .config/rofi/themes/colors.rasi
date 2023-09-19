@@ -1,0 +1,21 @@
+/* 
+
+  	@author      : 00xWolf
+  	  GitHub    : @mmsaeed509
+  	  Developer : Mahmoud Mohamed
+  	﫥  Copyright : Exodia OS
+
+ 	*/
+
+* {
+
+background:			#26122C;
+background-alt:		#F72D93;
+foreground:			#D78FFE;
+selected:			#9f51c9;
+highlight:			#BE00CD;
+urgent:				#AC0000;
+on:					#9c0598;
+off:				#AC0000;
+
+}

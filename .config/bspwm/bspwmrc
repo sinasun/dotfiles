@@ -9,12 +9,16 @@ sxhkd -c "$HOME/.config/bspwm/sxhkdrc" &
 # panel
 $HOME/.config/polybar/launch.sh &
 
+dunst -conf $HOME/.config/dunst/dunstrc &
+
 $HOME/.config/bspwm/autostart.sh &
+pgrep -x battery-alert >/dev/null || ~/bin/battery-alert &
+
 # set some bsp specific
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config window_gap 12
-bspc config border_width 0 
+bspc config border_width 2 
 
 bspc config split_ratio 0.5
 bspc config borderless_monocle true
@@ -24,4 +28,11 @@ bspc config pointer_modifier mod1
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 bspc config pointer_action3 resize_corner
+
+# Border colors
+bspc config normal_border_color "#101014"
+bspc config focused_border_color "#20bafb"
+bspc config urgent_border_color "#B58900"
+bspc config presel_border_color "#26E2FF"
+
 

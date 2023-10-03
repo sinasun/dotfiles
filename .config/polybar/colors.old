@@ -1,13 +1,13 @@
 [color]
 
 ;; Dark Add FC at the beginning #FC1E1F29 for 99 transparency
-bg = #050714
+bg = #141621
 bg-alt = #050714
 fg = #ffffff
 ac = #0f94d2
 mc = #4DD0E1
 bga = #252E30
-mb = #04171F
+mb = #050714
 
 trans = #00000000
 white = #FFFFFF

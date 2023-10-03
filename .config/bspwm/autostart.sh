@@ -30,7 +30,7 @@ setxkbmap -option "grp:alt_shift_toggle" -layout "us,ir"
 
 
 #Some ways to set your wallpaper besides variety or nitrogen
-feh --no-fehbg --bg-scale $HOME/.config/bspwm/wall.jpg &
+feh --bg-fill $HOME/.config/bspwm/wall.jpg &
 #wallpaper for other Arch based systems
 #feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &
 #feh --randomize --bg-fill ~/Dropbox/Apps/Desktoppr/*

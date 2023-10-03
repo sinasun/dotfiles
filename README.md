@@ -2,6 +2,6 @@
 
 These are my personal dotfiles for configuring Arch Linux with the BSPWM window manager.
 
-![Screenshot](screenshots/1.png)
+![Banner Image](screenshots/1.png)
 
 Feel free to use and customize them to fit your own preferences and workflow.

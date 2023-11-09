@@ -1,8 +1,6 @@
 # web browser
 super + w
     google-chrome-stable
-    #chromium
-    #al-browser
 
 # terminal emulator
 super + Return
@@ -12,12 +10,6 @@ super + Return
 super + r
    kitty -e ranger
 
-# program launcher
-super + @space
-    rofi_run -r
-alt + p
-    rofi_run -r
-
 #to change tabs ig
 # Switch to recent window
 alt + Tab 
@@ -26,11 +18,11 @@ alt + Tab
 
 # make sxhkd reload its configuration files:
 super + shift + r
-    pkill -USR1 -x sxhkd
+    bspc wm -r && pkill -USR1 -x sxhkd
 
 # quit bspwm normally
 super + x
-    rofi_run -l
+	bspc quit
 
 # Send the window to another edge of the screen
 #super + {_,shift + }{Left,Down,Up,Right}
@@ -157,8 +149,10 @@ XF86MonBrightnessDown
 #
 # song control
 #
+alt + 0 
+	playerctl --player=vlc,spotify,%any play-pause
 alt + {minus,equal}
-	playerctl {previous,next}
+	playerctl --player=vlc,spotify,%any {previous,next}
 # screenshot 
 super + shift + s 
   flameshot gui

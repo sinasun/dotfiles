@@ -135,6 +135,18 @@ label-separator-background = ${color.mb}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+[module/tray]
+type = internal/tray
+
+format-margin = 2px
+tray-spacing = 4px
+tray-size = 16
+tray-background = ${color.bg}
+format-offset-x = 0
+format-offset-y = 0
+tray-padding = 2px
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 [module/mod]
 type = internal/bspwm
 

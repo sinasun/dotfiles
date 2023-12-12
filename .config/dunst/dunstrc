@@ -201,3 +201,8 @@
 
 [battery]
     appname = "Power Warning"
+
+[skip-rule] 
+	appname=brave-browser
+	skip_display=true
+

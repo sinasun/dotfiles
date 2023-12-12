@@ -2,10 +2,23 @@
 
 player_status=$(playerctl --player=vlc,spotify,%any status 2> /dev/null)
 
-if [ "$player_status" = "Playing" ]; then
-    echo "%{B#04171F}Playing: $(playerctl --player=vlc,spotify,%any metadata artist) - $(playerctl --player=vlc,spotify,%any metadata title)"
-elif [ "$player_status" = "Paused" ]; then
-    echo "%{B#04171F}Stopped: $(playerctl --player=vlc,spotify,%any metadata artist) - $(playerctl --player=vlc,spotify,%any metadata title)"
-else
-    echo "%{B#04171F}Playing: Silence"
-fi
+truncate_string() {
+    local str="$1"
+    local max_length=$2
+
+    [ ${#str} -gt $max_length ] && echo "$(echo "$str" | cut -c 1-$max_length)..." || echo "$str"
+}
+
+print_info() {
+    local status=$1
+    local title=$(truncate_string "$(playerctl --player=vlc,spotify,%any metadata title)" 20)
+    local artist=$(truncate_string "$(playerctl --player=vlc,spotify,%any metadata artist)" 20)
+
+    echo "%{B#04171F}$status: $title - $artist"
+}
+
+case "$player_status" in
+    "Playing") print_info "Playing" ;;
+    "Paused") print_info "Paused" ;;
+    *) echo "%{B#04171F}Playing: Silence" ;;
+esac

@@ -97,7 +97,7 @@ LAUNCH_SINGLE_BAR() {
 	done
 
 	# Launch polybar #
-	polybar -q main -c   "$DIR"/config &
+	polybar -q main -c   "$DIR"/config.ini &
 
 }
 

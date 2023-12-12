@@ -12,8 +12,7 @@ $HOME/.config/polybar/launch.sh &
 dunst -conf $HOME/.config/dunst/dunstrc &
 
 $HOME/.config/bspwm/autostart.sh &
-pgrep -x battery-alert >/dev/null || ~/bin/battery-alert &
-
+$HOME/.config/scripts/battery_notification.sh &
 # set some bsp specific
 bspc monitor -d I II III IV V VI VII VIII IX X
 

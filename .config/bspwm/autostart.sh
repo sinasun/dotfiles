@@ -53,7 +53,7 @@ killall -q picom
 
 	done
 
-picom --config $HOME/.config/picom/picom.conf &
+picom --config $HOME/.config/picom/default.conf &
 #run volumeicon &
 #nitrogen --restore &
 #run caffeine &

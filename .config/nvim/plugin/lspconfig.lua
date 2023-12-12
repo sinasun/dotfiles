@@ -126,6 +126,18 @@ nvim_lsp.dockerls.setup {}
 
 nvim_lsp.bashls.setup {}
 
+nvim_lsp.mdx_analyzer.setup {}
+
+nvim_lsp.rust_analyzer.setup {
+	settings = {
+		['rust-analyzer'] = {
+			diagnostics = {
+				enable = false,
+			}
+		}
+	}
+}
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
 		underline = true,

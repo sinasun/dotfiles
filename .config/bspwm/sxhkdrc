@@ -1,6 +1,6 @@
 # web browser
 super + w
-    google-chrome-stable
+    brave
 
 # terminal emulator
 super + Return

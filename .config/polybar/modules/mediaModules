@@ -4,9 +4,7 @@
 
 type = internal/pulseaudio
 
-
 sink = alsa_output.pci-0000_12_00.3.analog-stereo
-
 
 use-ui-max = false
 
@@ -14,23 +12,23 @@ use-ui-max = false
 interval = 5
 
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${color.mb}
-format-volume-foreground = ${color.teal}
+format-volume-background = ${colors.background}
+format-volume-foreground = ${colors.color5}
 
 format-muted = <label-muted>
-format-muted-background = ${color.mb}
+format-muted-background = ${colors.background}
 format-muted-prefix = 婢
-format-muted-prefix-foreground = ${color.red}
+format-muted-prefix-foreground = ${colors.color1}
 
 label-volume = %percentage%%
-label-volume-foreground = ${color.GREEN}
+label-volume-foreground = ${colors.color2}
 
 label-muted = " Mute"
-label-muted-foreground = ${color.red}
+label-muted-foreground = ${colors.color1}
 
-ramp-volume-0 = 奄
-ramp-volume-1 = 奄
-ramp-volume-2 = 奄
+ramp-volume-0 =  
+ramp-volume-1 = 奔
+ramp-volume-2 = 奔
 ramp-volume-3 = 奔
 ramp-volume-4 = 奔
 ramp-volume-5 = 奔
@@ -38,145 +36,18 @@ ramp-volume-6 = 墳
 ramp-volume-7 = 墳
 ramp-volume-8 = 墳
 ramp-volume-9 = 墳
-ramp-volume-foreground = ${color.GREEN}
-
-ramp-headphones-0 = 
-ramp-headphones-1 = 
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/mpd]
-type = internal/mpd
-
-interval = 2
-
-format-online = <icon-prev> <toggle> <icon-next>
-
-format-online-background = ${color.mb}
-format-offline-foreground = ${color.grey}
-
-format-playing = ${self.format-online}
-format-paused = ${self.format-online}
-format-stopped = ${self.format-online}
-
-format-offline = <label-offline>
-format-offline-prefix = " "
-format-offline-background = ${color.mb}
-
-label-song =  "%artist% - %title%"
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-label-offline = "Offline"
-
-icon-play = 
-icon-play-font = 2
-icon-play-foreground = ${color.lime}
-icon-pause = 
-icon-pause-font = 2
-icon-pause-foreground = ${color.lime}
-icon-stop = 
-icon-stop-foreground = ${color.lime}
-icon-prev = 玲
-icon-prev-font = 1
-icon-prev-foreground = ${color.blue}
-icon-next = 怜
-icon-next-font = 1
-icon-next-foreground = ${color.blue}
-
-;;-----------
-
-[module/song]
-type = internal/mpd
-
-interval = 2
-
-format-online = <icon-repeat> <label-song>
-format-online-foreground = ${color.pink}
-
-format-playing = ${self.format-online}
-format-paused = ${self.format-online}
-format-stopped = ${self.format-online}
-
-label-song =  " %title%"
-label-song-foreground = ${color.cyan}
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-icon-repeat = ""
-icon-repeat-foreground = #FF0677
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/info-cava]
-type = custom/script
-exec =  ~/.config/polybar/scripts/cava
-
-format = <label>
-label = %output%
-format-foreground = #9d00ff
-format-background = ${color.mb}
-tail = true
+ramp-volume-foreground = ${colors.color2}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/pulse-mic]
 
 type = custom/script
-exec = ~/.config/polybar/scripts/pulse-mic
+exec = ~/.config/polybar/scripts/pulse-mic.sh
 tail = true
 click-left  = ~/.config/polybar/scripts/pulse-mic --toggle &
 scroll-up   = ~/.config/polybar/scripts/pulse-mic --increase &
 scroll-down = ~/.config/polybar/scripts/pulse-mic --decrease &
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-[module/mpd_bar]
-type = internal/mpd
-
-interval = 1
-
-host = 127.0.0.1
-port = 6601
-
-format-online = <label-song>  <bar-progress> 
-; format-online-foreground = ${colors.light0_soft}
-format-online-foreground = "#aaaaaa"
-format-online-padding = 3
-
-
-label-song = "   %artist%  ▶  %title%"
-label-song-maxlen = 60
-label-song-ellipsis = true
-
-label-offline = "mpd off"
-
-bar-progress-width = 12
-bar-progress-gradient = false
-
-bar-progress-indicator = 
-bar-progress-indicator-font = 1
-
-bar-progress-fill = ━
-; bar-progress-foreground-0 = "#aaaaaa"
-bar-progress-fill-font = 3
-
-bar-progress-empty = ━
-bar-progress-empty-font = 3
-
-[module/mpd_i]
-type = internal/mpd
-interval = 2
-
-host = 127.0.0.1
-port = 6601
-; socket = /run/mpd/socket
-
-format-online = <toggle>
-format-online-background = ${colors.faded_aqua}
-format-online-foreground = ${colors.dark0_hard}
-format-online-padding = 2
-icon-play = 
-icon-pause = 
-
 
 [module/mpris]
 type = custom/script
@@ -188,13 +59,13 @@ click-middle = playerctl --player=vlc,spotify,%any play-pause &
 
 [module/prev-song]
 type = custom/script
-exec = echo "%{B#04171F}玲  "
+exec = echo "%{F#c3e88d}玲  "
 format = <label>
 click-left = playerctl --player=vlc,spotify,%any previous
 
 [module/next-song]
 type = custom/script
-exec = echo "%{B#04171F}  怜"
+exec = echo "%{F#c3e88d}  怜"
 format = <label>
 click-left = playerctl --player=vlc,spotify,%any next
 

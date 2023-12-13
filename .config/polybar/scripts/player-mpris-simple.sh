@@ -14,11 +14,11 @@ print_info() {
     local title=$(truncate_string "$(playerctl --player=vlc,spotify,%any metadata title)" 20)
     local artist=$(truncate_string "$(playerctl --player=vlc,spotify,%any metadata artist)" 20)
 
-    echo "%{B#04171F}$status: $title - $artist"
+    echo "%{F#c3e88d}$status: $title - $artist"
 }
 
 case "$player_status" in
     "Playing") print_info "Playing" ;;
     "Paused") print_info "Paused" ;;
-    *) echo "%{B#04171F}Playing: Silence" ;;
+    *) echo "%{F#c3e88d}Playing: Silence" ;;
 esac

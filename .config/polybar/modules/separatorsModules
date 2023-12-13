@@ -1,123 +1,15 @@
-#####################################
-#                                   #
-#  @author      : 00xWolf           #
-#    GitHub    : @mmsaeed509       #
-#    Developer : Mahmoud Mohamed   #
-#  﫥  Copyright : Exodia OS         #
-#                                   #
-#####################################
-
-; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/dots]
-type = custom/text
-label = "  "
-
-label-background = ${color.background}
-label-foreground = ${color.RED}
-label-padding = 0
-label-active-font = 5
-
-; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/pip]
-type = custom/text
-label = |
-
-label-background = ${color.background}
-label-foreground = ${color.RED}
-label-padding = 1
-label-active-font = 5
-
-; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/Lpip]
-type = custom/text
-label = "<|"
-
-label-background = ${color.background}
-label-foreground = ${color.RED}
-label-padding = 1
-label-active-font = 5
-
-; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/Rpip]
-type = custom/text
-label = "|>"
-
-label-background = ${color.background}
-label-foreground = ${color.RED}
-label-padding = 1
-label-active-font = 5
-
-
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/space]
 type = custom/text
 label = "  "
-label-background = ${color.bg}
+label-background = ${colors.background}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/Dspace]
 type = custom/text
-label = "  "
-label-background = ${color.bg}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/sep]
-type = custom/text
-;label = ◆
-label = 
-label-active-font = 6
-label-background = ${color.background}
-label-foreground = ${color.blue-gray}
-label-padding = 2
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-
-##########################
-#       LD modules       #
-##########################
-
-[module/LD]
-type = custom/text
-
-label = "%{T5}%{T-}"
-label-foreground = ${color.mb}
-label-background = ${color.bg}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-##########################
-#       RD modules       #
-##########################
-
-[module/RD]
-type = custom/text
-
-label = "%{T5}%{T-}"
-label-foreground = ${color.mb}
-label-background = ${color.bg}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/BL]
-
-type = custom/text
-label = "[ "
-label-foreground = ${color.cyan}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/BR]
-
-type = custom/text
-label = " ]"
-label-foreground = ${color.cyan}
+label = "    "
+label-background = ${colors.background}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

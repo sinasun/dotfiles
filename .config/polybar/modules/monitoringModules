@@ -1,12 +1,3 @@
-#####################################
-#                                   #
-#  @author      : 00xWolf           #
-#    GitHub    : @mmsaeed509       #
-#    Developer : Mahmoud Mohamed   #
-#  﫥  Copyright : Exodia OS         #
-#                                   #
-#####################################
-
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/battery]
@@ -17,58 +8,31 @@ full-at = 99
 battery = ${system.battery}
 adapter = ${system.adapter}
 
-format-charging = <animation-charging> <label-charging>
-label-charging = %percentage%%
-format-charging-foreground = ${color.color4}
-format-charging-background =  ${color.mb}
-; format-charging-font = 4
+poll-interval = 2
 
-format-discharging = <ramp-capacity> <label-discharging>
-label-discharging = %percentage%%
-format-discharging-foreground = ${color.red}
-format-discharging-background = ${color.mb}
-; format-discharging-font = 4
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${color.pink}
-format-full-prefix-background = ${color.mb}
-; format-full-prefix-font = 4
-
-
-label-full = %percentage%%
-label-full-background = ${color.mb}
-label-full-foreground = #D4BFFF
-; label-full-font = 4
-
-label-discharging-foreground = #D4BFFF
-; label-discharging-font = 4
-
-ramp-capacity-foreground =  #A0E8A2  
-label-charging-foreground = #D4BFFF
-; label-charging-font = 4
-
-label-padding = 1
-
-ramp-capacity-0 = ""
-ramp-capacity-1 = ""
-ramp-capacity-2 = ""
-ramp-capacity-3 = ""
-ramp-capacity-4 = ""
-
-
-animation-charging-0 = ""
-animation-charging-1 = ""
-animation-charging-2 = ""
-animation-charging-3 = ""
-animation-charging-4 = ""
-
-
-animation-charging-foreground = #DF8890
-animation-charging-framerate = 750
-; animation-charging-font = 4
-
+format-charging-background = ${colors.background}
+format-charging-foreground = ${colors.color1}
 format-charging-padding = 1
+
+format-discharging-background = ${colors.background}
+format-discharging-foreground = ${colors.color1}
 format-discharging-padding = 1
+
+format-full-background = ${colors.background}
+format-full-foreground = ${colors.color1}
+format-full-padding = 1
+
+format-full-prefix = "%{T2}   %{T-}"
+format-charging-prefix = "%{T2}   %{T-}"
+format-discharging-prefix = "%{T2}   %{T-}"
+
+time-format = %H:%M
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+format-full = <label-full>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = FULL
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -77,48 +41,6 @@ type = internal/cpu
 interval = 0.5
 format-foreground = ${colors.color6}
 label =  %percentage:0.5%%
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/filesystem]
-type = internal/fs
-
-mount-0 = /
-interval = 30
-fixed-values = true
-
-format-mounted = <label-mounted>
-format-mounted-prefix = " "
-format-mounted-prefix-foreground = ${color.amber}
-format-mounted-prefix-background = ${color.mb}
-
-format-unmounted = <label-unmounted>
-format-unmounted-prefix = " "
-format-unmounted-prefix-foreground = ${color.amber}
-format-unmounted-prefix-background = ${color.mb}
-
-label-mounted = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e duf &:} %free%%{A}"
-label-unmounted = " %mountpoint%: NA"
-label-mounted-foreground = ${color.background}
-
-label-mounted-background = ${color.cyan}
-label-unmounted-background = ${color.cyan}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/memory]
-type = custom/script
-exec = exec free -g | sed -n 's/^Mem:\\s\\+[0-9]\\+\\s\\+\\([0-9]\\+\\)\\s.\\+/\\1/p'
-format = <label>
-format-prefix = "" 
-; format-prefix-font = 2
-
-label = "%{A1:alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e htop &:} %output% GB%{A}"
-; label-padding = 1
-label-foreground = #D4BFFF
-format-prefix-foreground = ${color.cyan}
-
-format-background = ${color.mb}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -142,7 +64,7 @@ type = custom/script
 exec = ~/.config/polybar/scripts/heatSensors
 interval = 1
 click-left = xsensors
-format-foreground = ${color.cyan}
-format-background =  ${color.mb}
+format-foreground = ${colors.color6}
+format-background =  ${color.backgroun}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

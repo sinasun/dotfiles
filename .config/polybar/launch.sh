@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-#####################################
-#                                   #
-#  @author      : 00xWolf           #
-#    GitHub    : @mmsaeed509       #
-#    Developer : Mahmoud Mohamed   #
-#  﫥  Copyright : Exodia OS         #
-#                                   #
-#####################################
-
 # Files and Directories #
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 CONFIG_FILE="$HOME/.config/bspwm/exodia.conf"

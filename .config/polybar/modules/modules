@@ -78,6 +78,24 @@ ramp-foreground =${color.blue-arch}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+[module/xworkspaces]
+type = internal/xworkspaces
+
+label-active = 
+label-active-foreground = ${colors.accent}
+label-active-padding = 1
+
+label-occupied = 
+label-occupied-padding = 1
+
+label-urgent = 
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = 
+label-empty-foreground = ${colors.disabled}
+label-empty-padding = 1
+
 [module/bspwm]
 type = internal/bspwm
 
@@ -191,8 +209,8 @@ label-background = ${color.mb}
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/wireless-network]
-format-connected-background = ${color.mb}
-format-disconnected-background = ${color.mb}
+format-connected-background = ${colors.background}
+format-disconnected-background = ${colors.background}
 type = internal/network
 interface = wlp3s0
 interval = 3.0
@@ -206,7 +224,7 @@ ramp-signal-1 = "󰤟"
 ramp-signal-2 = "󰤢"
 ramp-signal-3 = "󰤥"
 ramp-signal-4 = "󰤨"
-ramp-signal-foreground = #ffffff
+ramp-signal-foreground = ${colors.color3}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 

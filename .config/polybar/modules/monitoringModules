@@ -74,19 +74,9 @@ format-discharging-padding = 1
 
 [module/cpu]
 type = internal/cpu
-
-interval = 1
-
-format = <label>
-
-format-prefix = " "
-format-prefix-font = 2
-format-prefix-foreground = ${color.red}
-format-prefix-background = ${color.mb}
-label = "%{A1:stacer &:}CPU %percentage%%%{A}"
-; label-font = 10
-label-background = ${color.mb}
-label-foreground = #D4BFFF
+interval = 0.5
+format-foreground = ${colors.color6}
+label =  %percentage:0.5%%
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 

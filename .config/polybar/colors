@@ -1,41 +1,14 @@
-[color]
-
-;; Dark Add FC at the beginning #FC1E1F29 for 99 transparency
-bg = #050714
-bg-alt = #050714
-fg = #ffffff
-ac = #0f94d2
-mc = #4DD0E1
-bga = #252E30
-mb = #04171F
-
-trans = #00000000
-white = #FFFFFF
-black = #000000
-
-;; Colors
-
-red = #f7768e
-pink = #FF0677
-purple = #583794
-blue = #7aa2f7
-blue-arch = #0A9CF5
-cyan = #4DD0E1
-teal = #00B19F
-green = #9ece6a
-lime = #B9C244
-yellow = #e0af68
-amber = #FBC02D
-orange = #E57C46
-brown = #AC8476
-grey = #8C8C8C
-indigo = #6C77BB
-blue-gray = #6D8895
-
-background = #050714
-
-color4 = #DF8890
-
-GREEN = #00B19F
-
-MAGENTA = #0A9CF5
+[colors]
+background = #020B0F
+foreground = #c8d3f5
+accent = #20bafb
+disabled = #444a73
+color0 = #1b1d2b
+color1 = #ff757f
+color2 = #c3e88d
+color3 = #ffc777
+color4 = #82aaff
+color5 = #c099ff
+color6 = #86e1fc
+color7 = #828bb8
+bright_color1 = #ff757f

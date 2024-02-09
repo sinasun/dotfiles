@@ -1,6 +1,6 @@
 #!/bin/sh
 
-player_status=$(playerctl --player=vlc,spotify,%any status 2> /dev/null)
+player_status=$(playerctl --player=spotify,vlc,%any status 2> /dev/null)
 
 truncate_string() {
     local str="$1"
@@ -11,8 +11,8 @@ truncate_string() {
 
 print_info() {
     local status=$1
-    local title=$(truncate_string "$(playerctl --player=vlc,spotify,%any metadata title)" 20)
-    local artist=$(truncate_string "$(playerctl --player=vlc,spotify,%any metadata artist)" 20)
+    local title=$(truncate_string "$(playerctl --player=spotify,vlc,%any metadata title)" 20)
+    local artist=$(truncate_string "$(playerctl --player=spotify,vlc,%any metadata artist)" 20)
 
     echo "%{F#c3e88d}$status: $title - $artist"
 }

@@ -53,19 +53,19 @@ scroll-down = ~/.config/polybar/scripts/pulse-mic --decrease &
 type = custom/script
 exec = ~/.config/polybar/scripts/player-mpris-simple.sh
 interval = 3
-click-left = playerctl --player=vlc,spotify,%any play-pause &
-click-right = playerctl --player=vlc,spotify,%any play-pause &
-click-middle = playerctl --player=vlc,spotify,%any play-pause &
+click-left = playerctl --player=spotify,vlc,%any play-pause &
+click-right = playerctl --player=spotify,vlc,%any play-pause &
+click-middle = playerctl --player=spotify,vlc,%any play-pause &
 
 [module/prev-song]
 type = custom/script
 exec = echo "%{F#c3e88d}玲  "
 format = <label>
-click-left = playerctl --player=vlc,spotify,%any previous
+click-left = playerctl --player=spotify,vlc,%any previous
 
 [module/next-song]
 type = custom/script
 exec = echo "%{F#c3e88d}  怜"
 format = <label>
-click-left = playerctl --player=vlc,spotify,%any next
+click-left = playerctl --player=spotify,vlc,%any next
 

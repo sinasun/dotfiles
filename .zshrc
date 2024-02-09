@@ -124,6 +124,7 @@ alias volume-up="amixer set Master 5%+"
 alias volume-down="amixer set Master 5%-"
 alias copy="xclip -selection clipboard"
 alias vim="nvim"
+alias neofetch="fastfetch"
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 [ "$TERM" = "xterm-kitty" ] && alias icat="kitty +kitten icat"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -132,4 +133,5 @@ export PATH=$PATH:/home/sinasun/.spicetify
 
 # Created by `pipx` on 2023-11-24 19:55:52
 export PATH="$PATH:/home/sinasun/.local/bin"
-function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
+function gitignore() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
+bindkey '$' autosuggest-accept

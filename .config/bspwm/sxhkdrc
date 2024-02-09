@@ -20,6 +20,9 @@ alt + Tab
 super + shift + r
     bspc wm -r && pkill -USR1 -x sxhkd
 
+super + shift + o
+	pkill polybar && polybar
+
 # quit bspwm normally
 super + x
 	bspc quit
@@ -150,9 +153,9 @@ XF86MonBrightnessDown
 # song control
 #
 alt + 0 
-	playerctl --player=vlc,spotify,%any play-pause
+	playerctl --player=spotify,vlc,%any play-pause
 alt + {minus,equal}
-	playerctl --player=vlc,spotify,%any {previous,next}
+	playerctl --player=spotify,vlc,%any {previous,next}
 # screenshot 
 super + shift + s 
   flameshot gui

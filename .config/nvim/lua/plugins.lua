@@ -49,10 +49,13 @@ packer.startup(function(use)
 		run = function() vim.fn["mkdp#util#install"]() end,
 	})
 	use 'akinsho/nvim-bufferline.lua'
-	-- use 'github/copilot.vim'
 
 	use 'lewis6991/gitsigns.nvim'
 	use 'dinhhuy258/git.nvim' -- For git blame & browse
+
+	-- Lua configuration for hardtime
+	use 'm4xshen/hardtime.nvim'
+
 	use({
 		'mikesmithgh/kitty-scrollback.nvim',
 		disable = false,

@@ -1,8 +1,6 @@
 local status, null_ls = pcall(require, "null-ls")
 if (not status) then return end
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({
 		filter = function(client)
@@ -18,8 +16,8 @@ null_ls.setup {
 		null_ls.builtins.formatting.clang_format,
 		null_ls.builtins.formatting.rustfmt,
 		--null_ls.builtins.diagnostics.eslint_d.with({
-		--	diagnostics_format = '[eslint] #{m}\n(#{c})'
-		--}),
+		--		diagnostics_format = '[eslint] #{m}\n(#{c})'
+		--	}),
 		null_ls.builtins.diagnostics.fish
 	},
 	on_attach = function(client, bufnr)
@@ -36,6 +34,30 @@ null_ls.setup {
 	end
 }
 
+-- local status2, eslint = pcall(require, "eslint")
+-- if (not status2) then return end
+--
+-- eslint.setup({
+-- 	bin = 'eslint_d', -- or `eslint_d`
+-- 	code_actions = {
+-- 		enable = true,
+-- 		apply_on_save = {
+-- 			enable = true,
+-- 			types = { "directive", "problem", "suggestion", "layout" },
+-- 		},
+-- 		disable_rule_comment = {
+-- 			enable = true,
+-- 			location = "separate_line", -- or `same_line`
+-- 		},
+-- 	},
+-- 	diagnostics = {
+-- 		enable = true,
+-- 		report_unused_disable_directives = false,
+-- 		run_on = "type", -- or `save`
+-- 	},
+-- })
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 vim.api.nvim_create_user_command(
 	'DisableLspFormatting',
 	function()

@@ -18,9 +18,11 @@ if [ "$charger_connected" == "discharging" ]; then
     elif [ "$battery_percentage" -lt "$low_battery_threshold" ]; then
         # Battery is low, send a notification
         notify-send "Low Battery" "Battery is low: $battery_percentage%. Consider charging the laptop."
-    elif [ "$battery_percentage" -eq "$full_charge_threshold" ]; then
+    fi
+else
+    if [ "$battery_percentage" -eq "$full_charge_threshold" ]; then
         # Battery is fully charged, send a notification
         notify-send "Full Charge" "Battery is fully charged: $battery_percentage%. You may unplug the charger."
-    fi
+	fi
 fi
 

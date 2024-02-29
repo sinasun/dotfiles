@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [ -f ~/.bash_profile ]; then 
+    . ~/.bash_profile;
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -125,6 +129,7 @@ alias volume-down="amixer set Master 5%-"
 alias copy="xclip -selection clipboard"
 alias vim="nvim"
 alias neofetch="fastfetch"
+alias videolength='find . -type f \( -iname "*.mp4" -o -iname "*.mkv" -o -iname "*.avi" -o -iname "*.mov" -o -iname "*.wmv" \) -exec ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 {} \; | awk '\''{ total += $1 } END { hours = int(total / 3600); minutes = int((total % 3600) / 60); seconds = int(total % 60); printf "Total duration of all videos: %d hours, %d minutes, %d seconds\n", hours, minutes, seconds }'\'
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 [ "$TERM" = "xterm-kitty" ] && alias icat="kitty +kitten icat"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -135,3 +140,15 @@ export PATH=$PATH:/home/sinasun/.spicetify
 export PATH="$PATH:/home/sinasun/.local/bin"
 function gitignore() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
 bindkey '$' autosuggest-accept
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
+export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
+export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin/
+eval "$(zoxide init --cmd cd zsh)"
+
+# bun completions
+[ -s "/home/sinasun/.local/share/reflex/bun/_bun" ] && source "/home/sinasun/.local/share/reflex/bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.local/share/reflex/bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

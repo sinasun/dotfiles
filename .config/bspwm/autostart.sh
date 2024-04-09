@@ -67,4 +67,4 @@ picom --config $HOME/.config/picom/default.conf &
 #run atom &
 
 # Change touchpad scroll direction
-xinput --set-prop 13 'libinput Natural Scrolling Enabled' 1
+xinput --set-prop 11 'libinput Natural Scrolling Enabled' 1
